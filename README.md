@@ -1,0 +1,1 @@
+Sistema a la medida para el control y monitoreo de una casa inteligente por medio de una app movil
