@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="4dp"
+        android:background="@color/Azul"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="309dp"
+            android:layout_height="601dp"
+            android:layout_gravity="center"
+            android:background="@color/Azul"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.323"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="51dp">
+
+            <!-- Logo -->
+
+            <!-- Nombre de la propiedad -->
+
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Logo de la empresa"
+                android:src="@drawable/logoempresa" />
+
+            <TextView
+                android:id="@+id/titulo0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_horizontal"
+
+                android:text="Opción seleccionada"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+
+            <!-- Caracteristicas de la casa -->
+
+            <TextView
+                android:id="@+id/nombrepropiedad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:inputType="textPersonName"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+
+            <!-- Reglas de uso -->
+
+            <!-- Amenidades -->
+
+
+
+
+
+            <!-- Capacidad máxima -->
+
+            <TextView
+                android:id="@+id/titulo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="left"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:text="Número de tarjeta"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <EditText
+                android:id="@+id/NumTarjeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="16"
+                android:hint="XXXX-XXXX-XXXX-XXXX"/>
+
+            <TextView
+                android:id="@+id/tituloExpiracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="left"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:text="Fecha de Expiración"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <EditText
+                android:id="@+id/textExpiracion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="4"
+                android:hint="MM/AA"/>
+
+            <!-- Precio del alquiler -->
+            <TextView
+                android:id="@+id/tituloCVV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="left"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:text="Codigo CVV"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <EditText
+                android:id="@+id/textCVV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="3"
+                android:hint="123"
+                />
+
+
+            <!-- Precio del alquiler -->
+            <TextView
+                android:id="@+id/tituloPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="left"
+                android:paddingTop="15dp"
+                android:paddingBottom="5dp"
+                android:text="Precio del alquiler"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/textPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:ems="10"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <!-- Boton para regresar -->
+
+                <Button
+                    android:id="@+id/regresar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/Azuloscuro"
+                    android:gravity="center"
+                    android:text="Regresar"
+                    tools:layout_editor_absoluteX="149dp"
+                    tools:layout_editor_absoluteY="654dp" />
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <!-- Boton para registrar -->
+
+                <Button
+                    android:id="@+id/reservar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/Azuloscuro"
+                    android:gravity="center"
+                    android:text="Reservar"
+                    tools:layout_editor_absoluteX="149dp"
+                    tools:layout_editor_absoluteY="654dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

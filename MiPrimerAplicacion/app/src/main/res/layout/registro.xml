@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Azul"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="93dp">
+
+        <!-- Contenedor principal que contiene todos los elementos -->
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Azul"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:ignore="ExtraText">
+
+            <!-- Logo -->
+
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Logo de la empresa"
+                android:src="@drawable/logoempresa" />
+
+            <!-- Foto de perfil -->
+
+            <!-- Nombre y Apellido -->
+
+            <EditText
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                />
+
+            <EditText
+                android:id="@+id/lastNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="Apellido"
+                android:inputType="textPersonName" />
+
+            <!-- Profile picture -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/fotoPerfilImageView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_marginTop="30dp"
+                app:shapeAppearanceOverlay="@style/circular"
+                app:srcCompat="@drawable/baseline_account_circle_24"
+                android:background="@color/Azuloscuro"
+                android:scaleType="centerCrop"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/botonFotoPerfil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:srcCompat="@drawable/baseline_camera_alt_24"
+                />
+
+            <!-- Fecha de Nacimiento -->
+            <Button
+                android:id="@+id/selectDateButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/Azuloscuro"
+                android:text="Seleccionar Fecha de Nacimiento"
+                android:textColor="@color/colorWhite" />
+            <EditText
+                android:id="@+id/fechaNacimientoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="16dp"
+                android:hint="Fecha de Nacimiento"
+                android:focusable="false"
+                android:clickable="true" />
+
+
+            <!-- Nickname -->
+            <EditText
+                android:id="@+id/nicknameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="Nickname"
+                android:inputType="text" />
+
+            <!-- Correo y Contraseña -->
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="Correo Electrónico"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:hint="Contraseña"
+                android:inputType="textPassword" />
+            <!-- Confirmar Contraseña -->
+            <EditText
+                android:id="@+id/confirmPasswordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/white"
+                android:hint="Confirmar Contraseña"
+                android:inputType="textPassword" />
+
+            <!-- Nacionalidad drop down -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="0dp"
+                android:background="@color/white"
+                android:hint="@string/select"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <EditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="Descripción de la dueño de la casa"
+                android:inputType="textMultiLine"
+                android:lines="3" />
+
+            <!-- Hobbies -->
+            <EditText
+                android:id="@+id/hobbiesEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="Gustos o Hobbies"
+                android:inputType="text" />
+
+            <!-- Instrucciones Generales -->
+            <EditText
+                android:id="@+id/generalInstructionsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/white"
+                android:hint="Instrucciones Generales"
+                android:inputType="textMultiLine"
+                android:lines="3" />
+
+            <!-- Preguntas de Seguridad -->
+            <EditText
+                android:id="@+id/professorNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="¿Cuál es el nombre de su profesor preferido?"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/childhoodNicknameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="¿Cuál era su apodo de niño?"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/favoriteTeamEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="¿Cuál es su equipo de fútbol favorito?"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Datos de la Tarjeta -->
+            <EditText
+                android:id="@+id/cardNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Número de Tarjeta"
+                android:inputType="number"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:maxLength="16"/>
+
+            <EditText
+                android:id="@+id/cardExpiryEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Fecha de Expiración (MM/AA)"
+                android:inputType="number"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:maxLength="4"/>
+
+            <EditText
+                android:id="@+id/cardCvcEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="CVC"
+                android:inputType="numberPassword"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:maxLength="3"/>
+
+            <Button
+                android:id="@+id/terminosButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/Azuloscuro"
+                android:layout_marginTop="32dp"
+                android:text="Ver terminos y condiciones"
+                android:textColor="@color/colorWhite" />
+
+
+            <!-- Botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/registerButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/Azuloscuro"
+                    android:text="Registrar"
+                    android:textColor="@color/colorWhite" />
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/Azuloscuro"
+                    android:text="Cancelar"
+                    android:textColor="@color/colorWhite" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

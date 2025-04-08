@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Azul"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="93dp">
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Azul"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:ignore="ExtraText">
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="Logo de la empresa"
+                android:src="@drawable/logoempresa" />
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/recoveryTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recuperar Contraseña"
+                android:textColor="@color/colorWhite"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:gravity="center" />
+
+            <!-- Usuario o Correo -->
+            <EditText
+                android:id="@+id/usernameDisplayEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="Usuario o Correo"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Pregunta 1: Nombre del profesor -->
+            <EditText
+                android:id="@+id/professorNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="¿Cuál es el nombre de su profesor preferido?"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Pregunta 2: Apodo de niño -->
+            <EditText
+                android:id="@+id/childhoodNicknameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="¿Cuál era su apodo de niño?"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Pregunta 3: Equipo de fútbol favorito -->
+            <EditText
+                android:id="@+id/favoriteTeamEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:hint="¿Cuál es su equipo de fútbol favorito?"
+                android:padding="16dp"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp" />
+
+            <!-- Botón Verificar Respuestas -->
+            <Button
+                android:id="@+id/verifyAnswersButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/Azuloscuro"
+                android:text="Verificar Respuestas"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textSize="16sp" />
+
+            <!-- Botón Cancelar -->
+            <Button
+                android:id="@+id/cancelRecoveryButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/Azuloscuro"
+                android:text="Cancelar"
+                android:textColor="@color/colorWhite"
+                android:layout_marginTop="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
