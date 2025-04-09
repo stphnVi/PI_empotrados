@@ -14,10 +14,11 @@ R/Antes de escribir o leer un puerto GPIO en Linux, se debe utilizar el comando 
 2. ¿Qué comando podría utilizar, bajo Linux, para escribir a un GPIO específico?
 
 R/
-´´´
+```
 echo 17 > /sys/class/gpio/export # Export GPIO17
 echo out > /sys/class/gpio/gpio17/direction # Output
-echo 1 > /sys/class/gpio/gpio17/value # 1 (HIGH)´´´
+echo 1 > /sys/class/gpio/gpio17/value # 1 (HIGH)
+```
 
 
 ## Instrucciones de Compilación
