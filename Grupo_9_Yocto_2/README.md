@@ -1,4 +1,11 @@
-# Investigación
+# Biblioteca GPIO para Raspberry Pi 4
+
+## Integrantes
+- Sebastián Hidalgo Vargas
+- Karina Martínez Guerrero 
+- Estefanny Villalta Segura
+
+## Investigación
 
 1)¿Qué pasos debe seguir antes de escribir o leer de un puerto de entrada/salida general (GPIO)?
 
@@ -11,3 +18,7 @@ R/
 echo 17 > /sys/class/gpio/export # Export GPIO17
 echo out > /sys/class/gpio/gpio17/direction # Output
 echo 1 > /sys/class/gpio/gpio17/value # 1 (HIGH)´´´
+
+
+## Instrucciones de Compilación
+
