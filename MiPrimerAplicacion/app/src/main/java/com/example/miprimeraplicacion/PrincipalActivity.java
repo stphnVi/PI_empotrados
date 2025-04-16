@@ -18,8 +18,6 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal);
-
-
         ImageButton botoncasamodelo = findViewById(R.id.casamodelo);
 
 
@@ -29,6 +27,8 @@ public class PrincipalActivity extends AppCompatActivity {
             Intent intent = new Intent(PrincipalActivity.this, CasaModelo.class);
             startActivity(intent);
         });
+
+
 
 
     }

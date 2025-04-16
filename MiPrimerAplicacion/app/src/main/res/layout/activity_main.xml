@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Azul"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
 
@@ -23,6 +23,12 @@
 
         <!-- Logo -->
 
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="124dp"
+            app:srcCompat="@drawable/logoempresa" />
 
         <TextView
             android:id="@+id/textView"
@@ -48,7 +54,7 @@
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="319dp"
+            android:layout_width="332dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingTop="20dp"
@@ -87,7 +93,7 @@
             android:id="@+id/buttonForgot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/Azul"
+            android:backgroundTint="@color/white"
             android:drawablePadding="20dp"
             android:fontFamily="sans-serif-light"
             android:paddingTop="20dp"
@@ -114,12 +120,12 @@
             android:layout_width="200dp"
             android:layout_height="62dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/Azul"
+            android:backgroundTint="@color/Azuloscuro"
             android:drawablePadding="20dp"
             android:gravity="center"
             android:paddingTop="20dp"
             android:text="Registrate"
-            android:textColor="@color/Azuloscuro"
+            android:textColor="@color/white"
             android:textSize="20dp" />
 
     </LinearLayout>

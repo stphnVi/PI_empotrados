@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         }).start();
 
+
         buttonSend.setOnClickListener(view -> {
             String userEmail = ((EditText) findViewById(R.id.editTextMessage)).getText().toString();
             String password = ((EditText) findViewById(R.id.editTextTextPassword)).getText().toString();
@@ -124,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
     // Método para cambiar el fondo de un campo a rojo temporalmente
     private void marcarCampoTemporalmente(EditText editText) {
