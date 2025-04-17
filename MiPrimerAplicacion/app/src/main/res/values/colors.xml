@@ -13,4 +13,7 @@
     <color name="Azul">#4DA1A9</color>
     <color name="Azuloscuro">#2E5077</color>
     <color name="Amarillo">#FFFF00</color>
+    <color name="encendido">#D2DE32</color> <!-- rojo -->
+    <color name="apagado">#074799</color>   <!-- azul -->
+
 </resources>

@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
+import android.graphics.drawable.GradientDrawable;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -51,9 +54,10 @@ public class CasaModelo extends AppCompatActivity {
         botonluzcuarto.setOnClickListener(view -> {
 
             if(!cuarto_encendido) {
-                botonluzcuarto.setBackgroundResource(android.R.color.holo_green_light);
+                botonluzcuarto.setBackgroundColor(ContextCompat.getColor(this, R.color.encendido));
             }else{
-                botonluzcuarto.setBackgroundResource(android.R.color.transparent);
+                botonluzcuarto.setBackgroundColor(ContextCompat.getColor(this, R.color.apagado));
+
             }
             String messagecuarto = cuarto_encendido ? "LED2_OFF" : "LED2_ON";
             String messageSendcuarto = "func: luzcuarto" + messagecuarto;
@@ -64,9 +68,10 @@ public class CasaModelo extends AppCompatActivity {
         botonluzbaño.setOnClickListener(view -> {
 
             if(!baño_encendido) {
-                botonluzbaño.setBackgroundResource(android.R.color.holo_green_light);
+                botonluzbaño.setBackgroundColor(ContextCompat.getColor(this, R.color.encendido));
             }else{
-                botonluzbaño.setBackgroundResource(android.R.color.transparent);
+                botonluzbaño.setBackgroundColor(ContextCompat.getColor(this, R.color.apagado));
+
             }
 
             String messagebaño = baño_encendido ? "LED3_OFF" : "LED3_ON";
@@ -78,9 +83,10 @@ public class CasaModelo extends AppCompatActivity {
         botonluzsala.setOnClickListener(view -> {
 
             if(!sala_encendido) {
-                botonluzsala.setBackgroundResource(android.R.color.holo_green_light);
+                botonluzsala.setBackgroundColor(ContextCompat.getColor(this, R.color.encendido));
             }else{
-                botonluzsala.setBackgroundResource(android.R.color.transparent);
+                botonluzsala.setBackgroundColor(ContextCompat.getColor(this, R.color.apagado));
+
             }
 
             String messagesala = sala_encendido ? "LED1_OFF" : "LED1_ON";
@@ -92,9 +98,10 @@ public class CasaModelo extends AppCompatActivity {
         botonpgarage.setOnClickListener(view -> {
 
             if(!pgarage_abierta) {
-                botonpgarage.setBackgroundResource(android.R.color.holo_green_dark);
+                botonpgarage.setBackgroundColor(ContextCompat.getColor(this, R.color.encendido));
             }else{
-                botonpgarage.setBackgroundResource(android.R.color.transparent);
+                botonpgarage.setBackgroundColor(ContextCompat.getColor(this, R.color.apagado));
+
             }
 
             String messagepgarage = pgarage_abierta ? "motor_CLOSE" : "motor_OPEN";
