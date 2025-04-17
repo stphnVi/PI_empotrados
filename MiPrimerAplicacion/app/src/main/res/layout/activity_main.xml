@@ -52,15 +52,7 @@
             android:padding="15dp"
             android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="332dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="20dp"
-            android:text="Contraseña"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
+
 
         <LinearLayout
             android:layout_width="331dp"
@@ -75,6 +67,7 @@
                 android:layout_gravity="center"
                 android:background="@color/white"
                 android:ems="8"
+                android:hint="Contraseña"
                 android:inputType="textPassword"
                 android:padding="16dp"
                 android:paddingRight="20dp" />
@@ -109,6 +102,7 @@
             android:layout_height="62dp"
             android:layout_gravity="center"
             android:backgroundTint="@color/Azuloscuro"
+            android:textColor="@color/white"
             android:drawablePadding="20dp"
             android:gravity="center"
             android:text="Iniciar sesión"

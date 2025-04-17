@@ -19,23 +19,51 @@
             app:layout_constraintVertical_bias="0.025"
             app:srcCompat="@drawable/logoempresa" />
 
+
         <Button
-            android:id="@+id/cuarto"
-            android:layout_width="18dp"
-            android:layout_height="40dp"
+            android:id="@+id/PuertaPatio"
+            android:layout_width="44dp"
+            android:layout_height="23dp"
             android:background="@color/apagado"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.577"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.672" />
+            app:layout_constraintVertical_bias="0.724" />
 
         <Button
-            android:id="@+id/baño"
+            android:id="@+id/PuertaCocina"
+            android:layout_width="44dp"
+            android:layout_height="23dp"
+            android:background="@color/apagado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.743"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.392" />
+
+
+        <Button
+            android:id="@+id/PuertaPrincipal"
+            android:layout_width="46dp"
+            android:layout_height="21dp"
+            android:background="@color/apagado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.222" />
+
+        <Button
+            android:id="@+id/LuzC1"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:background="@color/apagado"
+            android:background="@drawable/boton_redondo"
+
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.357"
@@ -44,10 +72,34 @@
             app:layout_constraintVertical_bias="0.587" />
 
         <Button
-            android:id="@+id/sala"
+            android:id="@+id/LuzSala"
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:background="@color/apagado"
+            android:background="@drawable/boton_redondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.172"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.243" />
+
+        <Button
+            android:id="@+id/LuzCocina"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/boton_redondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.639"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.243"/>
+
+        <Button
+            android:id="@+id/LuzC2"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/boton_redondo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.639"
@@ -55,17 +107,30 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.587" />
 
+
         <Button
-            android:id="@+id/pgarage"
+            android:id="@+id/PuertaC1"
             android:layout_width="20dp"
             android:layout_height="39dp"
             android:background="@color/apagado"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintHorizontal_bias="0.396"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.671" />
+            app:layout_constraintVertical_bias="0.667" />
+
+        <Button
+            android:id="@+id/PuertaC2"
+            android:layout_width="20dp"
+            android:layout_height="39dp"
+            android:background="@color/apagado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.608"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.667" />
 
         <ImageView
             android:id="@+id/imageView4"
