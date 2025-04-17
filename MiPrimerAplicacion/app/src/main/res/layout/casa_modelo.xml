@@ -32,6 +32,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.724" />
 
+
         <Button
             android:id="@+id/PuertaCocina"
             android:layout_width="44dp"
@@ -39,11 +40,10 @@
             android:background="@color/apagado"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.743"
+            app:layout_constraintHorizontal_bias="0.768"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.392" />
-
 
         <Button
             android:id="@+id/PuertaPrincipal"
@@ -82,6 +82,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.243" />
+
+
+        <Button
+            android:id="@+id/LuzCome"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/boton_redondo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.639"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.428" />
 
         <Button
             android:id="@+id/LuzCocina"
