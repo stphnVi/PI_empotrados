@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         editTextMessage = findViewById(R.id.editTextMessage);
         // textViewChat = findViewById(R.id.textViewChat);
         Button buttonSend = findViewById(R.id.buttonSend);
-        Button buttonExit = findViewById(R.id.buttonExit);
+       // Button buttonExit = findViewById(R.id.buttonExit);
         //Button buttonForgetPassword = findViewById(R.id.buttonForgot);
 
         //Cada vez que se abre la pantalla de inicio de sesion se indica en el boolean

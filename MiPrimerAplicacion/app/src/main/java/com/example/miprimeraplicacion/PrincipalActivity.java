@@ -18,13 +18,18 @@ public class PrincipalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal);
+
         ImageButton botoncasamodelo = findViewById(R.id.casamodelo);
-
-
+        ImageButton botonmonitoreo = findViewById(R.id.monitoreo);
 
 
         botoncasamodelo.setOnClickListener(view -> { // mapeo del boton casa modelo
             Intent intent = new Intent(PrincipalActivity.this, CasaModelo.class);
+            startActivity(intent);
+        });
+
+        botonmonitoreo.setOnClickListener(view -> { // mapeo del boton casa modelo
+            Intent intent = new Intent(PrincipalActivity.this, Monitoreo.class);
             startActivity(intent);
         });
 

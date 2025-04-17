@@ -4,6 +4,34 @@ from Message import *
 import tkinter as tk
 from tkinter import scrolledtext
 
+
+def start_image_server():
+    PORT = 8080
+    DIRECTORY = "images"
+
+    import http.server
+    import socketserver
+    import os
+
+    os.chdir(DIRECTORY)
+
+    class CustomHandler(http.server.SimpleHTTPRequestHandler):
+        def do_GET(self):
+            print(f"Solicitud para imagenes recibida: {self.path}")
+            return super().do_GET()
+
+    handler = CustomHandler
+
+    with socketserver.TCPServer(("", PORT), handler) as httpd:
+        print(f"Servidor de imágenes activo en el puerto {PORT}")
+        httpd.serve_forever()
+
+
+import threading
+threading.Thread(target=start_image_server, daemon=True).start()
+
+
+
 class ChatServer:
     def __init__(self, host='0.0.0.0', port=1717):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -33,6 +61,8 @@ class ChatServer:
 
         self.root.protocol("WM_DELETE_WINDOW", self.close_server)
         self.root.mainloop()
+        
+
 
     def accept_connections(self):
         

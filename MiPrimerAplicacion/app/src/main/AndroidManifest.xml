@@ -18,6 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiPrimerAplicacion"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
 
@@ -38,6 +39,9 @@
 
         <!-- Declarar la actividad Principal -->
         <activity android:name=".PrincipalActivity"></activity>
+
+        <!-- Declarar la actividad registro_casa -->
+        <activity android:name=".Monitoreo"></activity>
 
         <!-- Declarar la actividad Casa modelo -->
         <activity android:name=".CasaModelo"></activity>
