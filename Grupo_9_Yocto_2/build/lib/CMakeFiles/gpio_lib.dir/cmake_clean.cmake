@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gpio_lib.dir/gpio_lib.c.o"
   "CMakeFiles/gpio_lib.dir/gpio_lib.c.o.d"
-  "libgpio_lib.a"
   "libgpio_lib.pdb"
+  "libgpio_lib.so"
 )
 
 # Per-language clean rules from dependency scanning.

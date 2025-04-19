@@ -1,0 +1,5 @@
+/home/karina/Documentos/TEC/Embebidos/Talleres/Taller7/Grupo_9_Yocto_2/build/usr/bin/main
+/home/karina/Documentos/TEC/Embebidos/Talleres/Taller7/Grupo_9_Yocto_2/build/usr/lib/libgpio_lib.so
+/home/karina/Documentos/TEC/Embebidos/Talleres/Taller7/Grupo_9_Yocto_2/build/usr/include/gpio_lib.h
+/home/karina/Documentos/TEC/Embebidos/Talleres/Taller7/Grupo_9_Yocto_2/build/usr/lib/libgpio_lib.so
+/home/karina/Documentos/TEC/Embebidos/Talleres/Taller7/Grupo_9_Yocto_2/build/usr/include/gpio_lib.h
