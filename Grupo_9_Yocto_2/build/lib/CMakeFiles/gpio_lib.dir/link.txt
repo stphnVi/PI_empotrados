@@ -1,2 +1,1 @@
-/usr/bin/ar qc libgpio_lib.a CMakeFiles/gpio_lib.dir/gpio_lib.c.o
-/usr/bin/ranlib libgpio_lib.a
+/usr/bin/cc -fPIC -shared -Wl,-soname,libgpio_lib.so -o libgpio_lib.so CMakeFiles/gpio_lib.dir/gpio_lib.c.o 

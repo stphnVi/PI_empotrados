@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/katharsis/Documents/GitHub/PI_empotrados/Grupo_9_Yocto_2/lib/gpio_lib.c" "lib/CMakeFiles/gpio_lib.dir/gpio_lib.c.o" "gcc" "lib/CMakeFiles/gpio_lib.dir/gpio_lib.c.o.d"
+  "/home/karina/Documentos/TEC/Embebidos/Talleres/Taller7/Grupo_9_Yocto_2/lib/gpio_lib.c" "lib/CMakeFiles/gpio_lib.dir/gpio_lib.c.o" "gcc" "lib/CMakeFiles/gpio_lib.dir/gpio_lib.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,1 +1,1 @@
-/usr/bin/cc -rdynamic -Wl,--dependency-file=CMakeFiles/main.dir/link.d CMakeFiles/main.dir/main.c.o -o main  lib/libgpio_lib.a
+/usr/bin/cc -rdynamic CMakeFiles/main.dir/main.c.o -o main  -Wl,-rpath,/home/karina/Documentos/TEC/Embebidos/Talleres/Taller7/Grupo_9_Yocto_2/build/lib: lib/libgpio_lib.so 
