@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "gpio_lib.h"
+#include <gpio_lib.h>
 
 #define OUTPUT_PIN1 17
 #define OUTPUT_PIN2 18

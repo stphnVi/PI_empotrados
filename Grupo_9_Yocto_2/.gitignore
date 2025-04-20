@@ -1,1 +1,9 @@
 build
+build-aux
+autom4te.cache
+m4
+config.h.in
+aclocal.m4
+*.in
+configure~
+configure

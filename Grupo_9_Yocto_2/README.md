@@ -14,7 +14,7 @@ El archivo no debería poder ejecutarse porque fue compilado para la arquitectur
 
 9) Ejecute finalmente la aplicación sayhello dentro de la Raspberry pi: ./sayhello
 ¿Cuál es la salida en este caso? ¿Qué quiere decir?
-
+Hello World!
 El archivo ahora sí muestra una salida porque fue compilado para la arquitectura en la que se está ejecutando
 
 ## Investigación
