@@ -1,0 +1,5 @@
+operaciones.lo: ../../lib/operaciones.c \
+ /opt/poky/5.0.8/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/stdc-predef.h \
+ ../../include/operaciones.h
+/opt/poky/5.0.8/sysroots/cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi/usr/include/stdc-predef.h:
+../../include/operaciones.h:

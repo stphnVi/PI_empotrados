@@ -1,0 +1,5 @@
+Permisos bitbake
+echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
+
+Cross compilation
+cmake ../ -DCMAKE_INSTALL_PREFIX:PATH=/path de instalación -DCMAKE_TOOLCHAIN_FILE=rasp4.cmake
