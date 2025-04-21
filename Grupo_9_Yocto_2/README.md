@@ -35,3 +35,36 @@ echo 1 > /sys/class/gpio/gpio17/value # 1 (HIGH)
 
 ## Instrucciones de Compilación
 
+1) Iniciar entorno de compilación
+```
+    . /opt/poky/5.0.8/environment-setup-cortexa7t2hf-neon-vfpv4-poky-linux-gnueabi
+```
+2) Configurar directorio de salida y host de cross compilación
+```
+    mkdir build
+    mkdir usr
+    cd build
+    ../configure --prefix=/home/USUARIO/RUTA_PROYECTO/build/usr --host=arm-poky-linux-gnueabi
+```
+3) Construir e instalar
+```
+    make
+    make install
+```
+4) Copiar archivos a tarjeta SD
+```
+    sudo cp -r usr /media/USUARIO/root/taller
+```
+
+## Instrucciones de ejecución
+Después de insertar la tarjeta SD en la Raspberry Pi
+1) Exportar la librería
+```
+    cd taller
+    export LD_LIBRARY_PATH=/taller/lib
+```
+2) Ejecutar ejemplo
+```
+    cd bin
+    ./main
+```
