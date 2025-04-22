@@ -14,7 +14,7 @@ El archivo no debería poder ejecutarse porque fue compilado para la arquitectur
 
 9) Ejecute finalmente la aplicación sayhello dentro de la Raspberry pi: ./sayhello
 ¿Cuál es la salida en este caso? ¿Qué quiere decir?
-Hello World!
+    Hello World
 El archivo ahora sí muestra una salida porque fue compilado para la arquitectura en la que se está ejecutando
 
 ## Investigación
@@ -41,6 +41,7 @@ echo 1 > /sys/class/gpio/gpio17/value # 1 (HIGH)
 ```
 2) Configurar directorio de salida y host de cross compilación
 ```
+    autoreconf --install
     mkdir build
     mkdir usr
     cd build
