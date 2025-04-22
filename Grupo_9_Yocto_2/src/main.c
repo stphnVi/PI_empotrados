@@ -9,7 +9,6 @@
 #define OUTPUT_PIN2 (18 + GPIO_OFFSET) 
 
 #define INPUT_PIN (23 + GPIO_OFFSET)
-
 int main() {
     // Configurar pines
     pinMode(OUTPUT_PIN1, OUTPUT);
