@@ -61,17 +61,23 @@ int digitalRead(int pin) {
     char path[MAX_BUF];
     char value_str[3];
     int fd;
-    
+    int ret;
+
     snprintf(path, sizeof(path), GPIO_BASE_PATH "/gpio%d/value", pin);
     fd = open(path, O_RDONLY);
     if (fd < 0) {
-        perror("Error leyendo GPIO");
+        perror("Error leyendo el valor GPIO");
         return -1;
     }
-    
-    read(fd, value_str, 3);
+
+    ret = read(fd, value_str, 3);
+    if (ret < 0) {
+        perror("Error leyendo el valor GPIO");
+        close(fd);
+        return -1;
+    }
     close(fd);
-    
+
     return atoi(value_str);
 }
 //Genera un parpadeo en un pin, a una freq y durante una duración
