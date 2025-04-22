@@ -61,7 +61,7 @@ echo 1 > /sys/class/gpio/gpio17/value # 1 (HIGH)
 Después de insertar la tarjeta SD en la Raspberry Pi
 1) Exportar la librería
 ```
-    cd taller
+    cd taller/usr
     export LD_LIBRARY_PATH=/taller/lib
 ```
 2) Ejecutar ejemplo

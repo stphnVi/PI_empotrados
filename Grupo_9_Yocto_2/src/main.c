@@ -2,9 +2,13 @@
 #include <unistd.h>
 #include <gpio_lib.h>
 
-#define OUTPUT_PIN1 17
-#define OUTPUT_PIN2 18
-#define INPUT_PIN 23
+#define GPIO_OFFSET 512
+
+#define OUTPUT_PIN1 (17 + GPIO_OFFSET) 
+
+#define OUTPUT_PIN2 (18 + GPIO_OFFSET) 
+
+#define INPUT_PIN (23 + GPIO_OFFSET)
 
 int main() {
     // Configurar pines
