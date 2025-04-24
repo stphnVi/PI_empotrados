@@ -40,11 +40,11 @@ public class Monitoreo extends AppCompatActivity {
         finishAffinity(); // Esto cierra todas las actividades en la pila
     }
     private final List<String> listaUrls = new ArrayList<String>() {{
-        add("http://192.168.1.23:8080/image.png");
-        add("http://192.168.1.23:8080/image1.png");
-        add("http://192.168.1.23:8080/image2.png");
-        add("http://192.168.1.23:8080/image2.png");
-        add("http://192.168.1.23:8080/image2.png");
+        add("http://192.168.100.63:8080/image.png");
+        add("http://192.168.100.63:8080/image1.png");
+        add("http://192.168.100.63:8080/image2.png");
+        add("http://192.168.100.63:8080/image2.png");
+        add("http://192.168.100.63:8080/image2.png");
     }};
 
     @Override
