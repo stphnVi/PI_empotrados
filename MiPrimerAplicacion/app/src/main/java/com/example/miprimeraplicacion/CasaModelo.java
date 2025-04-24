@@ -316,8 +316,9 @@ public class CasaModelo extends AppCompatActivity {
 
         runOnUiThread(() -> {
             String message = Socket.message;
-            if ("Llama detectada!".equals(message)) {
+            if ("ledOff".equals(message)) {
                 // Acción exitosa, actualizar UI
+                //BotonSalafondo.setColor(ContextCompat.getColor(this, R.color.encendido));
                 Toast.makeText(this, "Hay un incendio", Toast.LENGTH_SHORT).show();
                 Socket.message = null;
             } else if ("Inclinación detectada (HIGH)".equals(message)) {

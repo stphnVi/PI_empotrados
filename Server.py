@@ -38,7 +38,12 @@ class ChatServer:
         # Hilo para manejar conexiones entrantes
         self.thread = threading.Thread(target=self.accept_connections)
         self.thread.start()
-        threading.Thread(target=self.handle_server_input, daemon=True).start()
+        
+        # Hilo extra para leer información sin intervención de la app
+        self.raspi_thread = threading.Thread(target=self.read_rasp)
+        self.raspi_thread.start()
+
+        
 
     def accept_connections(self):
         while True:
@@ -79,21 +84,22 @@ class ChatServer:
         except:
             print("No se pudo enviar el mensaje a este cliente")
     
-    def handle_server_input(self):
-        while True:
-            try:
-                message = input()
-                if message.lower() == "/exit":
-                    self.close_server()
-                    break
-                self.broadcast(f"Servidor: {message}", None)
-            except EOFError:
-                break
 
     def close_server(self):
         for client in self.clients:
             client.close()
         self.server_socket.close()
+        
+    def read_rasp(self):
+        while True:
+           
+            message = input()
+            if message.lower() == "/exit":
+                self.close_server()
+                break
+            message = message + "\n"
+                
+            self.broadcast(f"Prueba_envio_rasp_app: {message}", None)
 
 if __name__ == "__main__":
     ChatServer()
