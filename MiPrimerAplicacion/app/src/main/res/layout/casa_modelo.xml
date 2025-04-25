@@ -21,43 +21,6 @@
 
 
         <Button
-            android:id="@+id/PuertaPatio"
-            android:layout_width="44dp"
-            android:layout_height="23dp"
-            android:background="@color/apagado"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.724" />
-
-
-        <Button
-            android:id="@+id/PuertaCocina"
-            android:layout_width="44dp"
-            android:layout_height="23dp"
-            android:background="@color/apagado"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.768"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.392" />
-
-        <Button
-            android:id="@+id/PuertaPrincipal"
-            android:layout_width="46dp"
-            android:layout_height="21dp"
-            android:background="@color/apagado"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.222" />
-
-        <Button
             android:id="@+id/LuzC1"
             android:layout_width="28dp"
             android:layout_height="28dp"
@@ -121,19 +84,17 @@
             app:layout_constraintVertical_bias="0.587" />
 
 
-        <Button
-            android:id="@+id/PuertaC1"
-            android:layout_width="20dp"
-            android:layout_height="39dp"
-            android:background="@color/apagado"
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="331dp"
+            android:layout_height="484dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.396"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.667" />
-
-        <Button
+            app:layout_constraintVertical_bias="0.639"
+            app:srcCompat="@drawable/croquis2" />
+        <View
             android:id="@+id/PuertaC2"
             android:layout_width="20dp"
             android:layout_height="39dp"
@@ -145,17 +106,41 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.667" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="331dp"
-            android:layout_height="484dp"
+        <View
+            android:id="@+id/PuertaC1"
+            android:layout_width="20dp"
+            android:layout_height="39dp"
+            android:background="@color/apagado"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.396"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.639"
-            app:srcCompat="@drawable/croquis2" />
+            app:layout_constraintVertical_bias="0.667" />
+        <View
+            android:id="@+id/PuertaPatio"
+            android:layout_width="44dp"
+            android:layout_height="23dp"
+            android:background="@color/apagado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.724" />
+
+
+        <View
+            android:id="@+id/PuertaPrincipal"
+            android:layout_width="46dp"
+            android:layout_height="21dp"
+            android:background="@color/apagado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.222" />
 
         <Button
             android:id="@+id/regresarprincipal"
@@ -167,6 +152,52 @@
             android:textColor="@color/colorWhite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.976" />
+
+        <Button
+            android:id="@+id/Encender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Azuloscuro"
+            android:gravity="center"
+            android:text="Encender"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.656"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.976" />
+
+        <Button
+            android:id="@+id/Puertas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Azuloscuro"
+            android:gravity="center"
+            android:text="Puertas"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.371"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.976" />
+
+        <Button
+            android:id="@+id/Apagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/Azuloscuro"
+            android:gravity="center"
+            android:text="Apagar"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.934"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.976" />

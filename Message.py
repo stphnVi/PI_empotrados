@@ -1,8 +1,9 @@
 def receive_info(message):
-    print(message)
+    test = ["0","1","0","1"]
     
-    if message == "func: LuzSalaLED2_ON":
-        return "test"
-
+    message = message.strip()  # elimina espacios, saltos de línea, etc.
+    print(f"Mensaje recibido limpio: '{message}'")
     
+    if message == 'CheckPuerta':
+        return test
     return "1"
