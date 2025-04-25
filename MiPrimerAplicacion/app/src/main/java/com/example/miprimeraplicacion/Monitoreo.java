@@ -108,10 +108,13 @@ public class Monitoreo extends AppCompatActivity {
     private void procesarMensaje(){
 
         runOnUiThread(() -> {
-            String message = Socket.message;
-            if ("Llama detectada!".equals(message)) {
+            String message = com.example.miprimeraplicacion.Socket.message;
+
+            if ("1".equals(message)) {
                 // Acción exitosa, actualizar UI
-                Toast.makeText(this, "Hay un incendio", Toast.LENGTH_SHORT).show();
+                pantallaCasaModeloAbierta = false;
+                Intent intent = new Intent(Monitoreo.this, PrincipalActivity.class);
+                startActivity(intent);
                 Socket.message = null;
             } else if ("Inclinación detectada (HIGH)".equals(message)) {
                 // Mostrar error

@@ -4,11 +4,16 @@ so_file = "/usr/lib/libhouse.so.0"
 house_lib = CDLL(so_file)
 
 def receive_info(message):
-    print(message)
+    #pos 0 > Patio
+    #pos 1 > Cuarto C1
+    #pos 2 > Cuarto C2
+    #pos 3 > Principal
     
-    if message == "func: LuzSalaLED2_ON":
-        house_lib.set_light_state(5, 1)
-        return "test"
-
+    test = "[0,0,1,0]"
     
+    message = message.strip()  # elimina espacios, saltos de línea, etc.
+    print(f"Mensaje recibido limpio: '{message}'")
+    
+    if message == 'CheckPuerta':
+        return test
     return "1"
