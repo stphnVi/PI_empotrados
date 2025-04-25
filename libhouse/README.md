@@ -45,7 +45,7 @@ echo 1 > /sys/class/gpio/gpio17/value # 1 (HIGH)
     mkdir build
     mkdir usr
     cd build
-    ../configure --prefix=/home/karina//Documentos/TEC/Embebidos/Proyectos/Proyecto1/libhouse/build/usr --host=arm-poky-linux-gnueabi
+    ../configure --prefix=/home/karina/Documentos/TEC/Embebidos/Proyectos/Proyecto1/libhouse/build/usr --host=arm-poky-linux-gnueabi
 ```
 3) Construir e instalar
 ```

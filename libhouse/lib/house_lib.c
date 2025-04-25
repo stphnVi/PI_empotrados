@@ -40,7 +40,7 @@ int get_door_state(int door)
     }
 }
 
-int set_light_state(Lights light, int value)
+int set_light_state(int light, int value)
 {
     switch (light)
     {

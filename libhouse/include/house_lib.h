@@ -27,7 +27,7 @@ typedef enum{
 #define FRONT_DOOR_PIN (22 + GPIO_OFFSET)
 #define BACK_DOOR_PIN (5 + GPIO_OFFSET)
 
-int set_light_state(Lights light, int value);
+int set_light_state(int light, int value);
 int get_door_state(int door);
 int pin_setup(void);
 int take_photo(void);
