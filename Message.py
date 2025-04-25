@@ -3,6 +3,8 @@ so_file = "/usr/lib/libhouse.so.0"
 #so_file = "/house/lib/libhouse.so"
 house_lib = CDLL(so_file)
 
+house_lib.pin_setup()
+
 def receive_info(message):
     #pos 0 > Patio
     #pos 1 > Cuarto C1
@@ -15,5 +17,47 @@ def receive_info(message):
     print(f"Mensaje recibido limpio: '{message}'")
     
     if message == 'CheckPuerta':
-        return test
-    return "1"
+        doors = []
+        doors.append(house_lib.get_door_state(4))
+        doors.append(house_lib.get_door_state(1))
+        doors.append(house_lib.get_door_state(2))
+        doors.append(house_lib.get_door_state(3))
+        return "doors"
+    elif message == "TodasOFF":
+        house_lib.set_light_state(6, 0)
+        return "0"
+    elif message == "TodasON":
+        house_lib.set_light_state(6, 1)
+        return "0"
+    elif message == "func: LuzComeLED2_OFF":
+        house_lib.set_light_State(4, 0)
+        return "0"
+    elif message == "func: LuzComeLED2_ON":
+        house_lib.set_light_State(4, 1)
+        return "0"
+    elif message == "func: LuzSalaLED2_OFF":
+        house_lib.set_light_State(5, 0)
+        return "0"
+    elif message == "func: LuzSalaLED2_ON":
+        house_lib.set_light_State(5, 1)
+        return "0"
+    elif message == "func: luzCocinaLED2_OFF":
+        house_lib.set_light_State(3, 0)
+        return "0"
+    elif message == "func: luzCocinaLED2_ON":
+        house_lib.set_light_State(3, 1)
+        return "0"
+    elif message == "func: LuzC1LED2_OFF":
+        house_lib.set_light_State(1, 0)
+        return "0"
+    elif message == "func: LuzC1LED2_ON":
+        house_lib.set_light_State(1, 1)
+        return "0"
+    elif message == "func: LuzC2LED3_OFF":
+        house_lib.set_light_State(2, 0)
+        return "0"
+    elif message == "func: LuzC2LED3_ON":
+        house_lib.set_light_State(2, 1)
+        return "0"
+    else:
+        return "unknown action"
