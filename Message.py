@@ -1,5 +1,10 @@
 def receive_info(message):
-    test = ["0","1","0","1"]
+    #pos 0 > Patio
+    #pos 1 > Cuarto C1
+    #pos 2 > Cuarto C2
+    #pos 3 > Principal
+    
+    test = "[0,0,1,0]"
     
     message = message.strip()  # elimina espacios, saltos de línea, etc.
     print(f"Mensaje recibido limpio: '{message}'")

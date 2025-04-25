@@ -57,13 +57,6 @@ public class CasaModelo extends AppCompatActivity {
         comedor_encendido = prefs.getBoolean("comedor_encendido", false);
 
 
-        //PUERTAS
-        puertaP_abierta = prefs.getBoolean("puertaP_abierta", false);
-        puertaC1_abierta = prefs.getBoolean("puertaC1_abierta", false);
-        puertaC2_abierta = prefs.getBoolean("puertaC2_abierta", false);
-        puerta_cocina_abierta = prefs.getBoolean("puerta_cocina_abierta", false);
-        puerta_principal_abierta = prefs.getBoolean("puerta_principal_abierta", false);
-
         //----------------------------LOS BOTONES
 
         //BOTONES DE LUCES
@@ -73,7 +66,7 @@ public class CasaModelo extends AppCompatActivity {
         Button botonluzSala = findViewById(R.id.LuzSala);
         Button botonluzCome = findViewById(R.id.LuzCome);
 
-        //BOTONES DE PUERTAS
+        //View DE PUERTAS
         View PuertaP = findViewById(R.id.PuertaPatio);
         View PuertaC1 = findViewById(R.id.PuertaC1);
         View PuertaC2 = findViewById(R.id.PuertaC2);
@@ -103,14 +96,6 @@ public class CasaModelo extends AppCompatActivity {
         BotonC1fondo.setColor(ContextCompat.getColor(this, cuartoC1_encendido ? R.color.encendido : R.color.apagado));
         BotonC2fondo.setColor(ContextCompat.getColor(this, cuartoC2_encendido ? R.color.encendido : R.color.apagado));
         BotonComefondo.setColor(ContextCompat.getColor(this, comedor_encendido ? R.color.encendido : R.color.apagado));
-
-        //PUERTAS
-
-        PuertaP.setBackgroundColor(ContextCompat.getColor(this, puertaP_abierta ? R.color.encendido : R.color.apagado));
-        PuertaC1.setBackgroundColor(ContextCompat.getColor(this, puertaC1_abierta ? R.color.encendido : R.color.apagado));
-        PuertaC2.setBackgroundColor(ContextCompat.getColor(this, puertaC2_abierta ? R.color.encendido : R.color.apagado));
-        PuertaPrin.setBackgroundColor(ContextCompat.getColor(this, puerta_principal_abierta ? R.color.encendido : R.color.apagado));
-
 
 
 
@@ -302,6 +287,62 @@ public class CasaModelo extends AppCompatActivity {
                         .create()
                         .show();
                 Socket.message = null;
+            } else if (message != null && message.startsWith("[") && message.endsWith("]")) {
+
+                String clean = message.replaceAll("\\[|\\]|\\s", "");
+                String[] estadosStr = clean.split(",");
+
+
+                View puertaPatio = findViewById(R.id.PuertaPatio);
+                View puertaC1 = findViewById(R.id.PuertaC1);
+                View puertaC2 = findViewById(R.id.PuertaC2);
+                View puertaPrincipal = findViewById(R.id.PuertaPrincipal);
+
+
+                try {
+
+                    if (estadosStr.length > 0) {
+                        // PuertaPatio
+                        int estadoPatio = Integer.parseInt(estadosStr[0]);
+                        puertaPatio.setBackgroundColor(estadoPatio == 1 ?
+                                ContextCompat.getColor(this, R.color.encendido) :
+                                ContextCompat.getColor(this, R.color.apagado));
+
+
+                    }
+
+                    // PuertaC1
+                    if (estadosStr.length > 1) {
+                        int estadoC1 = Integer.parseInt(estadosStr[1]);
+                        puertaC1.setBackgroundColor(estadoC1 == 1 ?
+                                ContextCompat.getColor(this, R.color.encendido) :
+                                ContextCompat.getColor(this, R.color.apagado));
+
+                    }
+
+                    // PuertaC2
+                    if (estadosStr.length > 2) {
+                        int estadoC2 = Integer.parseInt(estadosStr[2]);
+                        puertaC2.setBackgroundColor(estadoC2 == 1 ?
+                                ContextCompat.getColor(this, R.color.encendido) :
+                                ContextCompat.getColor(this, R.color.apagado));
+
+                    }
+
+                    // PuertaPrincipal
+                    if (estadosStr.length > 3) {
+                        int estadoPrincipal = Integer.parseInt(estadosStr[3]);
+                        puertaPrincipal.setBackgroundColor(estadoPrincipal == 1 ?
+                                ContextCompat.getColor(this, R.color.encendido) :
+                                ContextCompat.getColor(this, R.color.apagado));
+                    }
+
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }
+                Socket.message = null;
+
+                
             } else {
                 // Manejar la lista para actualizar
                 Socket.message = null;
