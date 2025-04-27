@@ -42,6 +42,8 @@ class ChatServer:
         # Hilo extra para leer información sin intervención de la app
         self.raspi_thread = threading.Thread(target=self.read_rasp)
         self.raspi_thread.start()
+        
+        setup_house()
 
         
 
