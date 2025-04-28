@@ -44,26 +44,21 @@ def receive_info(message):
                     password=data.get('password')
                    
                     # Proceed with verifying the credentials using the hashed values
-                    result, user_id, user_data = user_db.verify_credentials(
-                        username,
-                        password
-                    )
-
+                    result, user_id, user_data = user_db.verify_credentials(username,password)
                     return "1" if result else "0"
                 except Exception as e:
                     print(f"Error during login: {e}")
                     return "0"
+            elif data.get('func')=='capture_image':
+                    #Comando que captura una imagen con la webcam y la establece en ese directorio
+                    cmd = ["fswebcam", "/home/root/PI_empotrados/images/image.jpg"]
+                    subprocess.run(cmd, check=True)
 
 
         except json.JSONDecodeError as e:
             print(f"Error parsing JSON: {e}")
             return "0"
 
-    # Handle existing message formats
-    if message== 'CapturePicture':
-        #Comando que captura una imagen con la webcam y la establece en ese directorio
-        cmd = ["fswebcam", "/home/root/image.jpg"]
-        subprocess.run(cmd, check=True)
     if message == 'CheckPuerta':
         doors = []
         try:
@@ -83,18 +78,6 @@ def receive_info(message):
         res = house_lib.set_light_state(6, 1)
         return "0"
     # Check if the message format is func: login, userEmail: X, password: Y
-    elif message.startswith("func: login"):
-        parts = message.split(", ")
-        if len(parts) >= 3:
-            email_part = parts[1].split(": ")[1] if len(parts[1].split(": ")) > 1 else ""
-            password_part = parts[2].split(": ")[1] if len(parts[2].split(": ")) > 1 else ""
-            
-            result, user_id, user_data = user_db.verify_credentials(
-                None,  # No username, using email
-                password_part,
-                email_part
-            )
-            return "1" if result else "0"
     elif message == "func: LuzComeLED2_OFF":
         house_lib.set_light_state(4, 0)
         return "0"

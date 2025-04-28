@@ -46,7 +46,7 @@ class UserDatabase:
                             hashed_password = hash_data(password)
 
                             # Check for username/password OR email/password match
-                            if (hashed_username and user_data["username"] == hashed_username and user_data["password"] == hashed_password):
+                            if (user_data["username"] == hashed_username and user_data["password"] == hashed_password):
                                 return True, user_data["userId"], user_data
                         except json.JSONDecodeError:
                             continue

@@ -1,6 +1,7 @@
 package com.example.miprimeraplicacion;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,11 +41,7 @@ public class Monitoreo extends AppCompatActivity {
         finishAffinity(); // Esto cierra todas las actividades en la pila
     }
     private final List<String> listaUrls = new ArrayList<String>() {{
-        add("http://192.168.18.42:8080/image.png");
-        add("http://192.168.18.42:8080/image1.png");
-        add("http://192.168.18.42:8080/image2.png");
-        add("http://192.168.18.42:8080/image2.png");
-        add("http://192.168.18.42:8080/image2.png");
+        add("http://192.168.18.111:8080/image.jpg");
     }};
 
     @Override
@@ -56,47 +53,23 @@ public class Monitoreo extends AppCompatActivity {
         Button botonregresarprincipal = findViewById(R.id.regresarprincipal);
         layoutPrincipal = findViewById(R.id.layoutPrincipal);
 
-        for (String urlImagen : listaUrls) {
-            LinearLayout fotoLayout = new LinearLayout(this);
-            fotoLayout.setOrientation(LinearLayout.VERTICAL);
-            fotoLayout.setPadding(16, 16, 16, 16);
-            fotoLayout.setGravity(Gravity.CENTER_VERTICAL);
+        // Initial image load
+        loadImages();
 
-            ImageView imagenCasa = new ImageView(this);
-            imagenCasa.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT, 500
-            ));
+        // Start periodic refresh
+        startImageRefresh();
 
-            Picasso.get()
-                    .load(urlImagen)
-                    .into(imagenCasa);
-
-            fotoLayout.addView(imagenCasa);
-            layoutPrincipal.addView(fotoLayout);
-
-            View separator = new View(this);
-            separator.setLayoutParams(new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT, 20
-            ));
-            layoutPrincipal.addView(separator);
-        }
-
-        botonregresarprincipal.setOnClickListener(view -> { // mapeo del boton exit
+        botonregresarprincipal.setOnClickListener(view -> {
             pantallaCasaModeloAbierta = false;
-            Intent intent = new Intent(Monitoreo.this, PrincipalActivity.class);
-            startActivity(intent);
-
+            finish(); // Just finish current activity instead of starting new one
         });
-
 
         new Thread(() -> {
             while (pantallaCasaModeloAbierta) {
-                // Escuchar continuamente los mensajes del servidor
                 if (Socket.message != null) {
                     procesarMensaje();
                 }
             }
-
         }).start();
     }
 
@@ -106,26 +79,54 @@ public class Monitoreo extends AppCompatActivity {
      * SIEMPRE al final de cada if poner "Socket.message=null"
      */
     private void procesarMensaje(){
-
         runOnUiThread(() -> {
             String message = com.example.miprimeraplicacion.Socket.message;
 
-            if ("1".equals(message)) {
-                // Acción exitosa, actualizar UI
-                pantallaCasaModeloAbierta = false;
-                Intent intent = new Intent(Monitoreo.this, PrincipalActivity.class);
-                startActivity(intent);
-                Socket.message = null;
-            } else if ("Inclinación detectada (HIGH)".equals(message)) {
+            if ("Inclinación detectada (HIGH)".equals(message)) {
                 // Mostrar error
                 Toast.makeText(this, "Hay un sismo", Toast.LENGTH_SHORT).show();
                 Socket.message = null;
-            } else {
-                // Manejar otros casos
+            }
+            // Remove the automatic navigation for "1" response
+            else {
+                // Just clear the message for other cases
                 Socket.message = null;
             }
-
-
         });
+    }
+
+    private void loadImages() {
+        for (String urlImagen : listaUrls) {
+            // Add timestamp to URL to prevent caching
+            String timestampedUrl = urlImagen + "?t=" + System.currentTimeMillis();
+
+            ImageView imagenCasa = new ImageView(this);
+            imagenCasa.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, 500
+            ));
+
+            Picasso.get()
+                    .load(timestampedUrl)
+                    .into(imagenCasa);
+
+            // Clear existing views and add new ones
+            layoutPrincipal.removeAllViews();
+            layoutPrincipal.addView(imagenCasa);
+        }
+    }
+
+    // Call this periodically to refresh the image
+    private void startImageRefresh() {
+        final Handler handler = new Handler();
+        final int delay = 2000; // Refresh every 2 seconds
+
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                if (pantallaCasaModeloAbierta) {
+                    loadImages();
+                    handler.postDelayed(this, delay);
+                }
+            }
+        }, delay);
     }
 }

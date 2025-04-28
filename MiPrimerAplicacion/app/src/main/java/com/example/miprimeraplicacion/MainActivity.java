@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                     // Create JSON login object
                     JSONObject loginData = new JSONObject();
                     loginData.put("func", "login");
-                    loginData.put("userEmail", userEmail);
+                    loginData.put("username", userEmail);
                     loginData.put("password", password);
 
                     // Send JSON string to server
