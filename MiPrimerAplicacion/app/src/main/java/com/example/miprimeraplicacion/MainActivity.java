@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -14,6 +15,9 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 import android.os.Handler;
 import android.os.Looper;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 // Recordar que dar los permisos del HW para utilizar los componentes por ejemplo la red
 // Esto se hace en el archivo AndroidManifest
@@ -49,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
         editTextMessage = findViewById(R.id.editTextMessage);
         // textViewChat = findViewById(R.id.textViewChat);
         Button buttonSend = findViewById(R.id.buttonSend);
-       // Button buttonExit = findViewById(R.id.buttonExit);
+        Button buttonSignup = findViewById(R.id.buttonSignUp);
+
+        // Button buttonExit = findViewById(R.id.buttonExit);
         //Button buttonForgetPassword = findViewById(R.id.buttonForgot);
 
         //Cada vez que se abre la pantalla de inicio de sesion se indica en el boolean
@@ -106,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
             String userEmail = ((EditText) findViewById(R.id.editTextMessage)).getText().toString();
             String password = ((EditText) findViewById(R.id.editTextTextPassword)).getText().toString();
 
-
             // Validar campos vacíos
             if (userEmail.isEmpty()) {
                 marcarCampoTemporalmente(editTextMessage);
@@ -118,11 +123,25 @@ public class MainActivity extends AppCompatActivity {
 
             // Continuar con la lógica solo si ambos campos están llenos
             if (!userEmail.isEmpty() && !password.isEmpty()) {
-                String messageSend = "func: login, " + "userEmail: " + userEmail + ", password: " + password;
-                Socket.sendMessage(messageSend);
+                try {
+                    // Create JSON login object
+                    JSONObject loginData = new JSONObject();
+                    loginData.put("func", "login");
+                    loginData.put("userEmail", userEmail);
+                    loginData.put("password", password);
+
+                    // Send JSON string to server
+                    Socket.sendMessage(loginData.toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
+        buttonSignup.setOnClickListener(view ->{
+            Intent intent = new Intent(MainActivity.this, RegistroActivity.class);
+            startActivity(intent);
+        });
 
     }
 

@@ -5,7 +5,8 @@ from Message import *
 # Servidor HTTP para imágenes
 def start_image_server():
     PORT = 8080
-    DIRECTORY = "images"
+#    DIRECTORY = "images"
+    DIRECTORY= "home/root/"
 
     import http.server
     import socketserver
@@ -29,7 +30,7 @@ threading.Thread(target=start_image_server, daemon=True).start()
 
 
 class ChatServer:
-    def __init__(self, host='192.168.18.42', port=1717):
+    def __init__(self, host='192.168.18.111', port=1717):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server_socket.bind((host, port))
         self.server_socket.listen(5)
